@@ -1,0 +1,18 @@
+.app-title, .app-desc {
+    text-align: center;
+}
+.app-title {
+    font-size: 1.7em;
+}
+.app-desc {
+    opacity: 0.5;
+    font-size: 1.1em
+}
+
+.app-banner {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+.app-contents {
+    margin-bottom: 4em;
+}
