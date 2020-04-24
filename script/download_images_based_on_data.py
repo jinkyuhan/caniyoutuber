@@ -1,18 +1,38 @@
 import pandas
-import google_image_crawler
+import gid
+import os
 
 
-DEBUG = False
+config = {
+    'driver_path': './chromedriver',
+    'headless': False,
+    'window-size': '720x480',
+    'disable_gpu': False
+}
 
+# set up downloader
+downloader = gid.build(config)
+
+# open data file
 file_names = ['subscriber_500_upper', 'subscriber_300_upper',
         'subscriber_100_upper', 'subscriber_50_upper', 'subscriber_30_upper', 'subscriber_10_upper']
-if DEBUG:
-    file_names = ['subscriber_500_upper']
 many_csv_data = []
+total_data_num = 0
 for file_name in file_names:
     csv_data = pandas.read_csv("../data/"+file_name+".csv", header=None)
-    if DEBUG:
-        print(f"[{file_name}]: {len(csv_data)}")
+    channels = []
     for row_idx in range(len(csv_data)):
         channel_name = str(csv_data[1][row_idx])
-        google_image_crawler.download_google_staticimages('./chromedriver', f'{channel_name} 유튜브', f'/Volumes/Data/{file_name}/{channel_name}/', 300)
+        category = str(csv_data[2][row_idx])
+        channel = {
+            'keyword': channel_name + ' 유튜브',
+            'limit': 100,
+            'download_context': '../data/img',
+            'path': f'{file_name}/{category}'
+        }
+        channels.append(channel)
+    # download a file
+    downloader.download(channels)
+
+
+    

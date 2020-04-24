@@ -17,8 +17,8 @@ if DEBUG == False:
         files.append(temp)
         csv_writers[file_name] = csv.writer(temp)
 
-subjects = ["게임", "BJ%2F인물%2F연예인", "음악%2F댄스%2F가수", "TV%2F방송", "음식%2F요리%2F레시피", "패션%2F미용",
-              "뉴스%2F정치%2F사회", "취미%2F라이프", "IT%2F기술%2F컴퓨터", "교육%2F강의", "영화%2F만화%2F애니", "키즈%2F어린이", "애완%2F반려동물", "스포츠%2F운동", "국내%2F해외%2F여행","자동차","주식%2F경제%2F부동산",]
+subjects = ["게임", "BJ%2F인물%2F연예인", "음악%2F댄스%2F가수", "음식%2F요리%2F레시피", "패션%2F미용",
+              "취미%2F라이프", "IT%2F기술%2F컴퓨터", "교육%2F강의", "영화%2F만화%2F애니", "키즈%2F어린이", "애완%2F반려동물", "스포츠%2F운동", "국내%2F해외%2F여행", "주식%2F경제%2F부동산"]
 korean = re.compile('[\u3131-\u3163\uac00-\ud7a3]+')
 for subject in subjects:
     is_last = False
