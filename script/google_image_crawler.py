@@ -15,7 +15,6 @@ from urllib3.exceptions import InsecureRequestWarning
 import datetime
 import time
 
-
 def download_google_staticimages(driver_path, keyword, dir_path, limit):
 
     urllib3.disable_warnings(InsecureRequestWarning)
