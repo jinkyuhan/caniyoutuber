@@ -1,3 +1,4 @@
 .vscode/
 data/
 downloads/
+__pycache__

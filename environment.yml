@@ -1,0 +1,5 @@
+name: test
+channels:
+  - defaults
+prefix: /opt/anaconda3/envs/test
+
