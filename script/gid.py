@@ -46,7 +46,7 @@ class Downloader:
             print(f'Loading Pages. This may take a few moments...')
             self.__driver.get(URL)
             self.__driver.implicitly_wait(10)
-            self.__scroll_to_bottom()
+            # self.__scroll_to_bottom()
             print('Page Scroll done...')
             print('Start to downloading')
 
